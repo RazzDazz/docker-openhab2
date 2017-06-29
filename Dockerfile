@@ -3,6 +3,9 @@ MAINTAINER RazzDazz
 # Using instructions from
 # http://docs.openhab.org/installation/linux.html
 
+# Expose Ports
+EXPOSE 8080 8443 
+
 # First, add the openHAB 2 Bintray repository key to your package manager and allow Apt to use the HTTPS Protocol:
 RUN apt-get -yqq update && \
     apt-get -yqq upgrade && \
