@@ -20,14 +20,12 @@ RUN apt-get -yqq update && \
     apt-get -y install apt-transport-https && \
     rm -rf /var/lib/apt/lists/*  
     
-# Add openhab repo to sources list, update and install
+# Add openhab repo to sources list, update and install openhab2 and addons
 RUN echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | tee /etc/apt/sources.list.d/openhab2.list && \
     apt-get -yqq update && \
     apt-get -yqq install openhab2 && \
+    apt-get -yqq install openhab2-addons && \
     rm -rf /var/lib/apt/lists/*
-
-# Install openhab AddOns
-RUN apt-get -yqq install openhab2-addons
 
 # Expose Ports
 EXPOSE 5005 8080 8443 
