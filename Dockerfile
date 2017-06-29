@@ -27,7 +27,7 @@ RUN echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | tee /etc/a
     rm -rf /var/lib/apt/lists/*
 
 # Install openhab AddOns
-RUN apt-get install openhab2-addons
+RUN apt-get -yqq install openhab2-addons
 
 # Expose Ports
 EXPOSE 5005 8080 8443 
