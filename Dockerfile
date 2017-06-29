@@ -31,8 +31,15 @@ RUN echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | tee /etc/a
 EXPOSE 5005 8080 8443 
 
 # Expose Volumes
+# Site configuration
+VOLUME /etc/openhab2
+# Log Files
 VOLUME /var/log/openhab2
+# Userdata like rrd4j databases:
 VOLUME /var/lib/openhab2
+
+# Set workdir
+WORKDIR /usr/share/openhab2
 
 # run shell to keep container alive for testing
 CMD  /bin/bash
