@@ -7,6 +7,7 @@ MAINTAINER RazzDazz
 RUN apt-get -y update
 RUN apt-get -y install wget
 RUN wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | apt-key add - 
+RUN apt-get -y install apt-transport-https
 
 # Add openhab repo to sources list, uüdate and install
 RUN echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | tee /etc/apt/sources.list.d/openhab2.list
